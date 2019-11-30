@@ -54,6 +54,14 @@ public class Princess {
 	}
 	}
 
+public void attackPrincess (Princess anotherPrincess) {
+	
+			if (this.hasGold() && anotherPrincess.hasGold()) {
+				this.giveGold();
+				anotherPrincess.takeGold();
+				
+			}
+			}
 }
 
 
