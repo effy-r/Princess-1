@@ -3,20 +3,34 @@ package com.accenture.princess;
 public class PrincessApp {
 
 	public static void main(String[] args) {
-
-		Princess anna = new Princess("Anna", "Anna' s castle", 20);
-
+			
+		//String PrincessInCastle = new String [] [];
+		String [] princessInCastle = {"Anna's castle", "Martha's castle", "Pia's castle"};
+		
+		String castle = princessInCastle[0];
+		String castle1 = princessInCastle[1];
+		String castle2 = princessInCastle[2];
+		
+		Princess anna = new Princess("Anna", castle, 20);
+		Princess martha = new Princess ("Martha", castle2, 30);
 		System.out.println(anna);
-
+		
+		anna.changeCastleName(castle1);
+		
+		System.out.println(anna);
+		System.out.println(martha);
+		
 		anna.giveGold();
 
 		System.out.println(anna);
 
 		System.out.println(anna);
 
-		Princess martha = new Princess("Martha", "Martha' s castle", 10);
+		//Princess martha = new Princess("Martha", "Martha' s castle", 10);
 
 		System.out.println(martha);
+		
+		
 
 		anna.changeCastleName("Anna's Castle");
 
@@ -51,6 +65,9 @@ public class PrincessApp {
 
 		anna.saleCastle(martha);
 		System.out.println(anna);
+		System.out.println(martha);
+		
+		martha.changeCastleName(castle);
 		System.out.println(martha);
 	}
 }

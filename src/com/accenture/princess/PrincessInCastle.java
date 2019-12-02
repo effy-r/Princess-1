@@ -1,7 +1,6 @@
 package com.accenture.princess;
 
-public class PrincessInCastle {
+public class PrincessInCastle extends Princess {
 
 	
-
 }

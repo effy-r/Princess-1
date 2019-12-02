@@ -2,10 +2,12 @@ package com.accenture.princess;
 
 public class Princess {
 
-	private String princessName;
-	private String castle;
+	protected String princessName;
+	protected String castle;
 	private int gold;
-
+	
+	
+	
 	public Princess() {
 
 	}
@@ -14,6 +16,11 @@ public class Princess {
 		this.princessName = princessName;
 		this.castle = castle;
 		this.gold = gold;
+	
+//	public Princess(String princessName, String castle, int gold) {
+//		this.princessName = princessName;
+//		this.castle = castle;
+//		this.gold = gold;
 
 	}
 
@@ -108,7 +115,7 @@ public class Princess {
 	public String toString() {
 		if (castle != "no castle") {
 
-			return "Princess " + princessName + " owns castle " + castle
+			return "Princess " + princessName + " lives at " + castle
 					+ ". She has " + gold + " gold ";
 
 		} else {
