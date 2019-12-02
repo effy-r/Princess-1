@@ -3,7 +3,7 @@ package com.accenture.princess;
 public class Princess {
 
 	protected String princessName;
-	protected String castle;
+	public String castle;
 	private int gold;
 	
 	
@@ -125,4 +125,5 @@ public class Princess {
 		}
 	}
 
+	
 }
