@@ -1,38 +1,71 @@
 package com.accenture.princess;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class UserInput {
-	
-	static String [] princessInCastle = {"Rose castle", "Blue castle", "Black castle"};
-	
-	static String castle = princessInCastle[0];
-	static String castle1 = princessInCastle[1];
-	static String castle2 = princessInCastle[2];
 
+	static String[] princessInCastle = { "Rose castle", "Blue castle",
+			"Black castle" };
+	static int[] goldMassive = { 100, 100, 100 };
+	static ArrayList<String> princessNames = new ArrayList<>();
+	static ArrayList<Princess> princess = new ArrayList<>();
+	
 	public static void main(String[] args) {
-
-		System.out.println(" Please enter the first Princesse's name: ");
-
 		Scanner scanner = new Scanner(System.in);
-		String princessName = scanner.next();
-		
-		System.out.println(" Thank you ! Princess " + princessName + " lives at " + castle);
-		
-		System.out.println(" Please enter the second Princesse's name: ");
 
-		Scanner scanner1 = new Scanner(System.in);
-		String princessName1 = scanner.next();
-		
-		System.out.println(" Thank you ! Princess " + princessName1 + " lives at " + castle1);
-		
-		System.out.println(" Please enter the third Princesse's name: ");
+		for (int i = 0; i < 3; i++) {
+			System.out.println(" Please enter the Princesse's name: ");
 
-		Scanner scanner2 = new Scanner(System.in);
-		String princessName2 = scanner.next();
+			String princessName = scanner.next();
+			princessNames.add(princessName);
+			Princess p = new Princess(princessName, princessInCastle[i],
+					goldMassive[i]);
+			princess.add(p);
+
+			System.out.println(" Thank you ! Princess " + princessName
+					+ " lives at " + princessInCastle[i]);
+
+			System.out.println();
+		}
+
+		System.out
+				.println("Each of the Princesses owns 100 of gold. You have an opportunity to add 10 gold to your favorite Princess. Please, choose the favorite Princess and enter her name");
+
+		String princessNameX = scanner.next();
+
+		if (princessNames.contains(princessNameX))
+
+		{
+			System.out.println("You have choosen Princess " + princessNameX);
+
+		} else {
+			System.out.println("The wrong name, please try once again");
+
+		}
+
+		// for (int i=0; i<princess.size(); i++){
+		// if(princess.get(i).getPrincessName().equals(princessNameX)){
+		// princess.get(i).giveGold();
+		// }
+		// }
+
 		
-		System.out.println(" Thank you ! Princess " + princessName2 + " lives at " + castle2);
+		Princess selectedPrincess = getByName(princessNameX); 
+		selectedPrincess.giveGold();
+		System.out.println(selectedPrincess);
+		
 	}
-	}
+	
 
+	public static Princess getByName(String name) {
+		Princess foundPrincess = null;
+		for (int i = 0; i < princess.size(); i++) {
+			if (princess.get(i).getPrincessName().equals(name)) {
+				foundPrincess = princess.get(i);
+			}
+		}
+
+		return foundPrincess;
+	}
+}

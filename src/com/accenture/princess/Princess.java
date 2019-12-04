@@ -4,7 +4,7 @@ public class Princess {
 
 	protected String princessName;
 	public String castle;
-	private int gold;
+	public int gold;
 	
 	
 	
