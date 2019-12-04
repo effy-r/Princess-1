@@ -10,7 +10,7 @@ public class UserInput {
 	static int[] goldMassive = { 100, 100, 100 };
 	static ArrayList<String> princessNames = new ArrayList<>();
 	static ArrayList<Princess> princess = new ArrayList<>();
-	
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
@@ -30,33 +30,32 @@ public class UserInput {
 		}
 
 		System.out
-				.println("Each of the Princesses owns 100 of gold. You have an opportunity to add 10 gold to your favorite Princess. Please, choose the favorite Princess and enter her name");
+				.println("Each of the Princesses owns 100 of gold. You have an opportunity to add 10 gold to your favorite Princess");
+		String princessNameX = null;
 
-		String princessNameX = scanner.next();
+		do {
+			System.out
+					.println("Please, choose the favorite Princess name from the list: "
+							+ princessNames);
 
-		if (princessNames.contains(princessNameX))
+			princessNameX = scanner.next();
+			if (princessNames.contains(princessNameX)) {
 
-		{
-			System.out.println("You have choosen Princess " + princessNameX);
+				System.out
+						.println("You have choosen Princess " + princessNameX);
 
-		} else {
-			System.out.println("The wrong name, please try once again");
+			} else {
+				System.out.println("The wrong name, please try once again");
 
-		}
+			}
+		} while (!princessNames.contains(princessNameX));
 
-		// for (int i=0; i<princess.size(); i++){
-		// if(princess.get(i).getPrincessName().equals(princessNameX)){
-		// princess.get(i).giveGold();
-		// }
-		// }
-
-		
-		Princess selectedPrincess = getByName(princessNameX); 
+		Princess selectedPrincess = getByName(princessNameX);
 		selectedPrincess.giveGold();
-		System.out.println(selectedPrincess);
-		
+		System.out.print(selectedPrincess);
+		System.out.println("for now");
+
 	}
-	
 
 	public static Princess getByName(String name) {
 		Princess foundPrincess = null;
