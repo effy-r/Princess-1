@@ -2,12 +2,10 @@ package com.accenture.princess;
 
 public class Princess {
 
-	protected String princessName;
+	public String princessName;
 	public String castle;
 	public int gold;
-	
-	
-	
+
 	public Princess() {
 
 	}
@@ -16,11 +14,6 @@ public class Princess {
 		this.princessName = princessName;
 		this.castle = castle;
 		this.gold = gold;
-	
-//	public Princess(String princessName, String castle, int gold) {
-//		this.princessName = princessName;
-//		this.castle = castle;
-//		this.gold = gold;
 
 	}
 
@@ -28,8 +21,16 @@ public class Princess {
 		return princessName;
 	}
 
+	public String setPrincessName(String princessName) {
+		return this.princessName;
+	}
+
 	public String getCastle() {
 		return castle;
+	}
+
+	public String setCastle(String castle) {
+		return this.castle = castle;
 	}
 
 	public int getGold() {
@@ -61,8 +62,7 @@ public class Princess {
 
 	public void losesCastle() {
 		if (!hasGold()) {
-			System.out.println(" The Princess " + princessName
-					+ " loses her Castle, the Castle " + castle
+			System.out.println(" The Princess " + princessName + " loses her Castle, the Castle " + castle
 					+ " is available for anybody!");
 		}
 	}
@@ -77,8 +77,7 @@ public class Princess {
 
 		else {
 
-			System.out
-					.println("One of the Princeses has no gold and the deal is not possible!");
+			System.out.println("One of the Princeses has no gold and the deal is not possible!");
 
 		}
 
@@ -92,7 +91,7 @@ public class Princess {
 
 	}
 
-	public void saleCastle(Princess anotherPrincess) {
+	public void sellCastle(Princess anotherPrincess) {
 
 		if (anotherPrincess.gold > 100) {
 			String castle1 = this.castle;
@@ -100,13 +99,12 @@ public class Princess {
 			anotherPrincess.castle = castle1;
 			this.castle = "no castle";
 			this.gold = this.gold + 100;
-			System.out.println("Princess " + anotherPrincess.princessName
-					+ " has bougth the " + castle1 + " from Princess "
-					+ princessName);
+			System.out.println("Princess " + anotherPrincess.princessName + " has bougth the " + castle1
+					+ " from Princess " + princessName);
 
 		} else {
-			System.out.println("Princess " + anotherPrincess.princessName
-					+ " doesn't have enough gold to buy the castle!");
+			System.out.println(
+					"Princess " + anotherPrincess.princessName + " doesn't have enough gold to buy the castle!");
 
 		}
 
@@ -115,15 +113,12 @@ public class Princess {
 	public String toString() {
 		if (castle != "no castle") {
 
-			return "Princess " + princessName + " lives at " + castle
-					+ ". She has " + gold + " gold ";
+			return "Princess " + princessName + " has " + gold + " gold ";
 
 		} else {
 
-			return "Princess " + princessName + " doesn't own any castle "
-					+ ". She has " + gold + " gold ";
+			return "Princess " + princessName + " doesn't own any castle " + ". She has " + gold + " gold ";
 		}
 	}
 
-	
 }
